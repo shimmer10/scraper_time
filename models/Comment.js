@@ -1,3 +1,11 @@
+/************************************
+ * Comment Schema and Model
+ * 
+ * @author Jennifer Grace
+ * 
+ * 08-01-2019
+ ************************************/
+
 var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;

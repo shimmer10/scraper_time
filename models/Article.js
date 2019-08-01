@@ -1,8 +1,16 @@
-var mongoose = require("mongoose");
+/************************************
+ * Article Schema and Model
+ * 
+ * @author Jennifer Grace
+ * 
+ * 08-01-2019
+ ************************************/
+
+ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema;
 
-// create user schema
+// create article schema
 var ArticleSchema = new Schema({
   headline: {
     type: String,
@@ -12,22 +20,19 @@ var ArticleSchema = new Schema({
       type: String,
       required: true
   },
-  // `link` is required and of type String
   url: {
     type: String,
     required: true
   },
-  // `note` is an object that stores a Note id
-  // The ref property links the ObjectId to the Note model
-  // This allows us to populate the Article with an associated Note
-  note: {
+  // link to our comments
+  comment: {
     type: Schema.Types.ObjectId,
     ref: "Comment"
   }
 });
 
-// This creates our model from the above schema, using mongoose's model method
+// create model from Schema
 var Article = mongoose.model("Article", ArticleSchema);
 
-// Export the Article model
+// export the Article model
 module.exports = Article;
