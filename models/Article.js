@@ -12,17 +12,25 @@ var Schema = mongoose.Schema;
 
 // create article schema
 var ArticleSchema = new Schema({
+  // image: {
+  //   type: String,
+  //   required: true,
+  //   unique: true
+  // },
   headline: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   summary: {
       type: String,
-      required: true
+      required: true,
+      unique: true
   },
   url: {
     type: String,
-    required: true
+    required: true,
+    unique: true
   },
   // link to our comments
   comment: {
